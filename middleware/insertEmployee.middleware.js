@@ -3,7 +3,6 @@ import db from '../db/handleBirthdays.db.js';
 export default async function insertEmployee(req, res, next) {
   if (req.error) {
     next();
-    return;
   }
   try {
     const { first_name, last_name, country, city, birthday } = req.body;
@@ -22,6 +21,8 @@ export default async function insertEmployee(req, res, next) {
 
     if (age < 18) {
       req.error = 'User must be at least 18 years old.';
+      next();
+      return;
     }
 
     await db.insertEmployee({ first_name, last_name, country, city });

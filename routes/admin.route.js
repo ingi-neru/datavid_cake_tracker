@@ -6,7 +6,7 @@ const adminRouter = express.Router();
 
 adminRouter.get('/addmember', (req, res) => {
   if (!req.session.admin) {
-    res.render('error', { errorMessage: 'You are not logged in as admin', admin: false });
+    res.render('error', { errorMessage: 'You are not logged in as admin', admin: true });
     return;
   } else {
     const admin = req.session.admin ? true : false;
@@ -16,7 +16,7 @@ adminRouter.get('/addmember', (req, res) => {
 
 adminRouter.post('/newmember', insertEmployee, getEmployees, (req, res) => {
   if (req.error) {
-    res.render('error', { error: req.error });
+    res.render('error', { errorMessage: req.error, admin: true });
     return;
   } else {
     const admin = req.session.admin ? true : false;

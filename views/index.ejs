@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <%- include('partials/head', { title }) %> 
+  <%- include('partials/navbar') %>
+  <body>
+    <%- include('partials/search-employee') %>
+    <table class="container">
+      <thead>
+        <tr>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Country</th>
+          <th>City</th>
+          <th>Birthday</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% employees.forEach(function(employee) { %>
+        <tr id="employee-row">
+          <td><%= employee.first_name %></td>
+          <td><%= employee.last_name %></td>
+          <td><%= employee.country %></td>
+          <td><%= employee.city %></td>
+          <td><%= employee.birthday %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </body>
+</html>

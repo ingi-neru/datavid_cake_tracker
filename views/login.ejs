@@ -1,0 +1,15 @@
+<%- include('partials/head', { title }) %>
+<nav>
+        <ul class="navbarlist">
+            <%- include('partials/redirect') %>
+        </ul>
+    </nav>
+<div id="form-container">
+        <h2>Login</h2>
+        <input type="text" id="username" class="form" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" class="form" required>
+        <br>
+        <button id="login-button" class="form">Login</button>
+        <br>
+        <h6 id="helper-text">Log in as admin to add more employees to the database</h6>        
+</div>

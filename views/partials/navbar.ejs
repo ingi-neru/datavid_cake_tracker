@@ -1,0 +1,10 @@
+<nav>
+  <ul class="navbarlist">
+    <% if (admin) { %>
+    <li class="navbar"><a class="navbar" href="/auth/logout">Log out</a></li>
+    <li class="navbar"><a class="navbar" href="/admin/addmember">Add new member</a></li>
+    <% } else { %>
+    <li class="navbar"><a class="navbar" href="/auth/login">Log in as admin</a></li>
+    <% } %>
+  </ul>
+</nav>
